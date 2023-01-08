@@ -2,6 +2,14 @@
 
 > True-Compliance Test
 
+## To Improve if I had more time
+
+    - Add more tests to Properties
+    - Add more tests to Notes
+    - Add more tests to Certificates
+    - On Form validations use prepare for validation method to convert to correct dates formats 
+
+
 ## Getting started
 
 ``` bash

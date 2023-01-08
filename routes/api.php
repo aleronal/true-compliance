@@ -21,14 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Properties Api endpoints
 Route::get('/property/{property}/certificate', [PropertyController::class, 'certificatesProperty']);
 Route::apiResource('property', PropertyController::class);
 
+//Certificates Api Endpoints
 Route::apiResource('certificate', CertificateController::class)->only(['index', 'store', 'show']);
 
+//Notes Api Endpoints
 Route::post('/property/{property}/note', [NoteController::class, 'createNoteProperty']);
 Route::post('/certificate/{certificate}/note', [NoteController::class, 'createNoteCertificate']);
-
 Route::get('/property/{property}/note', [NoteController::class, 'getPropertysNote']);
 Route::get('/certificate/{certificate}/note', [NoteController::class, 'getCertificatesNote']);
 

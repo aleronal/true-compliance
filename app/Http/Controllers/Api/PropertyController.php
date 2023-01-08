@@ -49,9 +49,7 @@ class PropertyController extends Controller
      */
     public function show(Property $property):PropertyResource
     {
-
         return new PropertyResource($property);
-
     }
 
 
@@ -83,7 +81,7 @@ class PropertyController extends Controller
     {
         $property->delete();
 
-        return response()->json(null, 204);
+        return response()->json(['Data' => 'Property Deleted Successfully', 204]);
 
     }
 
@@ -91,13 +89,11 @@ class PropertyController extends Controller
      * Returns the certificates for specific Property.
      *
      * @param property $property
-     * @return AnonymousResourceCollection
+     * @return JsonResponse
      */
-    public function certificatesProperty(Property $property):AnonymousResourceCollection
+    public function certificatesProperty(Property $property): JsonResponse
     {
-
-        return PropertyResource::collection($property->certificates());
-
+        return response()->json(['Data' => $property->certificates]);
     }
 
 }

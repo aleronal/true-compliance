@@ -14,7 +14,6 @@
 ## Getting started
 
 ``` bash
-# install dependencies
 git clone https://github.com/aleronal/true-compliance.git
 cd true-compliance
 

@@ -7,10 +7,11 @@ use App\Http\Requests\NoteRequest;
 use App\Http\Resources\NoteResource;
 use App\Models\Certificate;
 use App\Models\Property;
+use Illuminate\Http\JsonResponse;
 
 class NoteController extends Controller
 {
-    public function createNoteProperty(Property $property, NoteRequest $request)
+    public function createNoteProperty(Property $property, NoteRequest $request):JsonResponse
     {
         $property->notes()->create($request->validated());
 
@@ -20,7 +21,7 @@ class NoteController extends Controller
         ]);
     }
 
-    public function createNoteCertificate(Certificate $certificate, NoteRequest $request)
+    public function createNoteCertificate(Certificate $certificate, NoteRequest $request):JsonResponse
     {
         $certificate->notes()->create($request->validated());
 
@@ -30,12 +31,12 @@ class NoteController extends Controller
         ]);
     }
 
-    public function getPropertysNote(Property $property)
+    public function getPropertysNote(Property $property):NoteResource
     {
         return new NoteResource($property);
     }
 
-    public function getCertificatesNote(Certificate $certificate)
+    public function getCertificatesNote(Certificate $certificate):NoteResource
     {
         return new NoteResource($certificate);
     }

@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\CertificateController;
+use App\Http\Controllers\Api\NoteController;
 use App\Http\Controllers\Api\PropertyController;
-use App\Http\Controllers\NoteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

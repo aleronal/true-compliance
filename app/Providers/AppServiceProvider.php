@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Certificate;
+use App\Models\Property;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Relation::enforceMorphMap([
+            'Property' => Property::class,
+            'Certificate' => Certificate::class
+        ]);
     }
 }

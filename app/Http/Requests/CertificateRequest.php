@@ -24,10 +24,10 @@ class CertificateRequest extends FormRequest
     public function rules()
     {
         return [
-            'property_id' => ['required'],
-            'stream_name' => ['required'],
-            'issue_date' => ['required'],
-            'next_due_date' => ['required']
+            'property_id' => ['required','integer'],
+            'stream_name' => ['required','string'],
+            'issue_date' => ['required','date_format:Y-m-d'],
+            'next_due_date' => ['required','date_format:Y-m-d']
         ];
     }
 }

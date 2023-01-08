@@ -26,12 +26,12 @@ class PropertyRequest extends FormRequest
         return [
              'organisation' => ['required'],
              'property_type' => ['required'],
-             'parent_property_id'=> ['required'],
-             'uprn'=> ['required'],
+             'parent_property_id'=> ['nullable', 'numeric'],
+             'uprn'=> ['required', 'numeric'],
              'address'=> ['required'],
              'town'=> ['required'],
              'postcode'=> ['required'],
-             'live'=> ['required'],
+             'live'=> ['required', 'boolean'],
         ];
     }
 }

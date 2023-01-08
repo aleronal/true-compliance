@@ -8,7 +8,7 @@
     - Add more tests to Notes
     - Add more tests to Certificates
     - On Form validations use prepare for validation method to convert to correct dates formats 
-    - Handle errors in case models are not found and throw more descritive exception 
+    - Handle errors in case models are not found and throw more descriptive exception 
 
 
 ## Getting started
